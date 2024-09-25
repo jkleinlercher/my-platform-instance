@@ -13,8 +13,8 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: {{ $.Values.default.repoURL }}
-      targetRevision: {{ $.Values.default.targetRevision }}
+    - repoURL: https://github.com/suxess-it/sx-cnp-oss
+      targetRevision: main
       path: platform-apps/charts/{{ .name }}
       helm:
         {{- with .helmOptions }}
@@ -28,8 +28,8 @@ spec:
           {{- tpl (toYaml $.Values.default.valueFiles | nindent 8) . }}      
         {{- end }}
         ignoreMissingValueFiles: true
-    - repoURL: 'https://github.com/jkleinlercher/my-platform-instance'
-      targetRevision: main
+    - repoURL: {{ $.Values.default.repoURL }}
+      targetRevision: {{ $.Values.default.targetRevision }}
       ref: values
   destination:
     {{- if .destinationNamespaceOverwrite }}
