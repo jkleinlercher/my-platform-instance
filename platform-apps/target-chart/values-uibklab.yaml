@@ -1,6 +1,6 @@
 default:
   valueFiles:
-  - $values/platform-apps/charts-values/values-uibklab-{{ .name }}.yaml
+  - $values/platform-apps/chart-values/values-uibklab-{{ .name }}.yaml
 
 applications:
 
